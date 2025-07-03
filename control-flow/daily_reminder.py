@@ -18,26 +18,11 @@ def main():
         else:
             print("Please answer 'yes' or 'no'.")
 
-    # Match-case for priority handling
-    match priority:
-        case 'high':
-            message = f"'{task}' is a high priority task"
-        case 'medium':
-            message = f"'{task}' is a medium priority task"
-        case 'low':
-            message = f"'{task}' is a low priority task"
-        case _:
-            message = f"'{task}' has an undefined priority"
-
-    # Add time sensitivity message
+    # Final customized reminder using f-string directly in print
     if time_bound == 'yes':
-        message += " that requires immediate attention today!"
+        print(f"Reminder: '{task}' is a {priority} priority task that requires immediate attention today!")
     else:
-        message += ". Consider completing it when you have free time."
-
-    # Print the final customized reminder
-    print("\nReminder:", message)
-
+        print(f"Reminder: '{task}' is a {priority} priority task. Consider completing it when you have free time.")
 
 if __name__ == "__main__":
     main()
